@@ -7,7 +7,7 @@ import store from './redux/store';
 function App() {
   return (
     <Provider store={store}>
-      <Router>
+      <Router basename="/content-creation-tool">
         <Route path="/" exact>
           <MainPage />
         </Route>

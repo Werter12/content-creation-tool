@@ -44,6 +44,7 @@ const MainPage = () => {
   const pageLimitParam = Number(urlSearchParams.get('pageLimit')) || 10;
   const [page, setPage] = useState(pageParam);
   const [pageLimit, setPageLimit] = useState(pageLimitParam);
+  const totalItems = images.length * page + pageLimit;
   const setPagination = (setPaginationFunc, pageAttribute, num) => {
     setPaginationFunc(num);
     urlSearchParams.set(pageAttribute, num);
@@ -91,7 +92,7 @@ const MainPage = () => {
       <Footer className="footer">
         <Pagination
           current={page}
-          total={images && images.length * page + pageLimit}
+          total={totalItems}
           pageSize={pageLimit}
           onShowSizeChange={(_, pageSize) => {
             if (pageSize !== pageLimit) {

@@ -34,7 +34,7 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://github.com/Werter12/content-creation-tool#readme",
+  "homepage": "http://Werter12.github.io/content-creation-tool",
   "browserslist": {
     "production": [
       ">0.2%",

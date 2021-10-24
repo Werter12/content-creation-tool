@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/Werter12/content-creation-toolstatic/css/main.eac330d4.chunk.css",
-    "main.js": "/Werter12/content-creation-toolstatic/js/main.ab2f2553.chunk.js",
-    "main.js.map": "/Werter12/content-creation-toolstatic/js/main.ab2f2553.chunk.js.map",
-    "runtime-main.js": "/Werter12/content-creation-toolstatic/js/runtime-main.54e4e5d6.js",
-    "runtime-main.js.map": "/Werter12/content-creation-toolstatic/js/runtime-main.54e4e5d6.js.map",
-    "static/css/2.54a01395.chunk.css": "/Werter12/content-creation-toolstatic/css/2.54a01395.chunk.css",
-    "static/js/2.828f1afd.chunk.js": "/Werter12/content-creation-toolstatic/js/2.828f1afd.chunk.js",
-    "static/js/2.828f1afd.chunk.js.map": "/Werter12/content-creation-toolstatic/js/2.828f1afd.chunk.js.map",
-    "static/js/3.dea4a6ba.chunk.js": "/Werter12/content-creation-toolstatic/js/3.dea4a6ba.chunk.js",
-    "static/js/3.dea4a6ba.chunk.js.map": "/Werter12/content-creation-toolstatic/js/3.dea4a6ba.chunk.js.map",
-    "index.html": "/Werter12/content-creation-toolindex.html",
-    "static/css/2.54a01395.chunk.css.map": "/Werter12/content-creation-toolstatic/css/2.54a01395.chunk.css.map",
-    "static/css/main.eac330d4.chunk.css.map": "/Werter12/content-creation-toolstatic/css/main.eac330d4.chunk.css.map",
-    "static/js/2.828f1afd.chunk.js.LICENSE.txt": "/Werter12/content-creation-toolstatic/js/2.828f1afd.chunk.js.LICENSE.txt"
+    "main.css": "/content-creation-tool/static/css/main.eac330d4.chunk.css",
+    "main.js": "/content-creation-tool/static/js/main.ab2f2553.chunk.js",
+    "main.js.map": "/content-creation-tool/static/js/main.ab2f2553.chunk.js.map",
+    "runtime-main.js": "/content-creation-tool/static/js/runtime-main.da62396a.js",
+    "runtime-main.js.map": "/content-creation-tool/static/js/runtime-main.da62396a.js.map",
+    "static/css/2.54a01395.chunk.css": "/content-creation-tool/static/css/2.54a01395.chunk.css",
+    "static/js/2.90764fa5.chunk.js": "/content-creation-tool/static/js/2.90764fa5.chunk.js",
+    "static/js/2.90764fa5.chunk.js.map": "/content-creation-tool/static/js/2.90764fa5.chunk.js.map",
+    "static/js/3.dea4a6ba.chunk.js": "/content-creation-tool/static/js/3.dea4a6ba.chunk.js",
+    "static/js/3.dea4a6ba.chunk.js.map": "/content-creation-tool/static/js/3.dea4a6ba.chunk.js.map",
+    "index.html": "/content-creation-tool/index.html",
+    "static/css/2.54a01395.chunk.css.map": "/content-creation-tool/static/css/2.54a01395.chunk.css.map",
+    "static/css/main.eac330d4.chunk.css.map": "/content-creation-tool/static/css/main.eac330d4.chunk.css.map",
+    "static/js/2.90764fa5.chunk.js.LICENSE.txt": "/content-creation-tool/static/js/2.90764fa5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.54e4e5d6.js",
+    "static/js/runtime-main.da62396a.js",
     "static/css/2.54a01395.chunk.css",
-    "static/js/2.828f1afd.chunk.js",
+    "static/js/2.90764fa5.chunk.js",
     "static/css/main.eac330d4.chunk.css",
     "static/js/main.ab2f2553.chunk.js"
   ]

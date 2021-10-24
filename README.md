@@ -1,5 +1,5 @@
-# senthesia-test-task
-## run app
-yarn
+# content-creation-tool
+Content Creation Tool - based on picsum.photos api
 
+yarn
 yarn start

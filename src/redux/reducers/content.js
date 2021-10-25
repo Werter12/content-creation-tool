@@ -7,18 +7,18 @@ import {
   GET_IMAGE_FAIL,
   UPDATE_DRAFT_IMAGE,
   SET_DRAFT_IMAGE,
-} from '../actions/images';
+} from '../actions/content';
 
 const initialState = {
   loading: false,
   error: '',
-  items: [],
-  item: null,
+  images: [],
+  draftImage: null,
 };
 
 export default function reducer(
   state = initialState,
-  { type, loading, items, item, attributes, error },
+  { type, loading, images, draftImage, error },
 ) {
   switch (type) {
     case LIST_IMAGES:
@@ -29,7 +29,7 @@ export default function reducer(
     case LIST_IMAGES_RESULT:
       return {
         ...state,
-        items,
+        images,
         loading,
       };
     case LIST_IMAGES_FAIL:
@@ -46,7 +46,7 @@ export default function reducer(
     case GET_IMAGE_RESULT:
       return {
         ...state,
-        item,
+        draftImage,
         loading,
       };
     case GET_IMAGE_FAIL:
@@ -58,15 +58,15 @@ export default function reducer(
     case UPDATE_DRAFT_IMAGE:
       return {
         ...state,
-        item: {
-          ...state.item,
-          ...attributes,
+        draftImage: {
+          ...state.draftImage,
+          ...draftImage,
         },
       };
     case SET_DRAFT_IMAGE:
       return {
         ...state,
-        item,
+        draftImage,
       };
     default:
       return state;

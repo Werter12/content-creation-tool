@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
-import image from './image';
+import content from './content';
 import storage from './storage';
 import { reducer as searchReducer } from 'redux-search'
 
 export default combineReducers({
-  image,
+  content,
   storage,
   search: searchReducer
 });

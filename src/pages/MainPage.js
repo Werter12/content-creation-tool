@@ -1,7 +1,7 @@
 import { Layout, PageHeader, Row, Pagination, Input } from 'antd';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { listImages, setDraftImage } from '../redux/actions/images';
+import { listImages, setDraftImage } from '../redux/actions/content';
 import { useLocation, useHistory } from 'react-router-dom';
 import { createSearchAction, getSearchSelectors } from 'redux-search';
 import { createSelector } from 'reselect';
@@ -9,34 +9,34 @@ import ThumbnailImage from '../components/ThumbnailImage';
 
 const { Footer, Content } = Layout;
 
-const items = (state) => state.image.items;
+const imagesSelector = (state) => state.content.images;
 
 const { text, result } = getSearchSelectors({
-  resourceName: 'items',
+  resourceName: 'images',
   resourceSelector: (resourceName, state) =>
-    state.image[resourceName].reduce((acc, elem) => {
+    state.content[resourceName].reduce((acc, elem) => {
       acc[elem.id] = elem;
       return acc;
     }, {}),
 });
 
 const searchSelector = createSelector(
-  [result, items, text],
-  (itemIds, items, searchText) => ({
-    itemIds,
-    items: items.filter((item) => {
-      return itemIds.includes(item.id);
+  [result, imagesSelector, text],
+  (imageIds, images, searchText) => ({
+    imageIds,
+    images: images.filter((image) => {
+      return imageIds.includes(image.id);
     }),
     searchText,
   }),
 );
-const searchAction = createSearchAction('items');
+const searchAction = createSearchAction('images');
 
 const MainPage = () => {
   const location = useLocation();
   const history = useHistory();
   const dispatch = useDispatch();
-  const { items: images, searchText } = useSelector((state) =>
+  const { images, searchText } = useSelector((state) =>
     searchSelector(state),
   );
   const urlSearchParams = new URLSearchParams(location.search);
@@ -44,7 +44,7 @@ const MainPage = () => {
   const pageLimitParam = Number(urlSearchParams.get('pageLimit')) || 10;
   const [page, setPage] = useState(pageParam);
   const [pageLimit, setPageLimit] = useState(pageLimitParam);
-  const totalItems = images.length * page + pageLimit;
+  const totalImages = images.length * page + pageLimit;
   const setPagination = (setPaginationFunc, pageAttribute, num) => {
     setPaginationFunc(num);
     urlSearchParams.set(pageAttribute, num);
@@ -92,7 +92,7 @@ const MainPage = () => {
       <Footer className="footer">
         <Pagination
           current={page}
-          total={totalItems}
+          total={totalImages}
           pageSize={pageLimit}
           onShowSizeChange={(_, pageSize) => {
             if (pageSize !== pageLimit) {

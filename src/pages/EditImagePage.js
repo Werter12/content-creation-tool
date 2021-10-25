@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Layout, PageHeader, Image, Row, Col, Spin } from 'antd';
 import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getImage, updateDraftImage } from '../redux/actions/images';
+import { getImage, updateDraftImage } from '../redux/actions/content';
 import { buildImageUrl } from '../redux/utils';
 import { startSaveToStorage } from '../redux/actions/storage';
 import NoImage from '../layouts/NoImage';
@@ -15,10 +15,9 @@ const MainPage = () => {
   const history = useHistory();
   const { imageId } = useParams();
   const draftImage = useSelector((state) =>
-    state.image.item?.id === imageId ? state.image.item : null,
+    state.content?.draftImage?.id === imageId ? state.content.draftImage : null,
   );
-  const savedImages = useSelector((state) => state.storage.savedImages);
-  const loading = useSelector((state) => state.image.loading);
+  const loading = useSelector((state) => state.content.loading);
   useEffect(() => {
     if (!draftImage) {
       dispatch(getImage(`/${imageId}/info`));
@@ -29,7 +28,7 @@ const MainPage = () => {
 
   const onFinish = (values) => {
     dispatch(
-      startSaveToStorage(savedImages, {
+      startSaveToStorage({
         ...draftImage,
         ...values,
         download_url: builtImageUrl,
@@ -46,7 +45,10 @@ const MainPage = () => {
 
   return (
     <Layout className="page">
-      <PageHeader title={`Image with ${imageId} id`}  onBack={() => history.goBack()} />
+      <PageHeader
+        title={`Image with ${imageId} id`}
+        onBack={() => history.goBack()}
+      />
       <Content className="content">
         {draftImage ? (
           <Row gutter={[34, 16]}>

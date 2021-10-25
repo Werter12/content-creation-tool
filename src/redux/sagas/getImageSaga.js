@@ -5,7 +5,7 @@ import {
   getImageResult,
   getImageFail,
   emptyEvent,
-} from '../actions/images';
+} from '../actions/content';
 import { callApi, asyncFlow, sagaErrorBoundaries } from '../utils';
 
 function findSavedImage(savedImages, draftImage) {

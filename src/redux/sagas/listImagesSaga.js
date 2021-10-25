@@ -5,7 +5,7 @@ import {
   listImagesResult,
   listImagesFail,
   emptyEvent,
-} from '../actions/images';
+} from '../actions/content';
 import {
   callApi,
   asyncFlow,

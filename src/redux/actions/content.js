@@ -21,11 +21,11 @@ export function listImages({
   };
 }
 
-export function listImagesResult(items) {
+export function listImagesResult(images) {
   return {
     type: LIST_IMAGES_RESULT,
     loading: false,
-    items
+    images
   };
 }
 
@@ -45,11 +45,11 @@ export function getImage(urlPath) {
   };
 }
 
-export function getImageResult(item) {
+export function getImageResult(draftImage) {
   return {
     type: GET_IMAGE_RESULT,
     loading: false,
-    item
+    draftImage
   };
 }
 
@@ -61,17 +61,17 @@ export function getImageFail(error) {
   };
 }
 
-export function updateDraftImage(attributes) {
+export function updateDraftImage(draftImage) {
   return {
     type: UPDATE_DRAFT_IMAGE,
-    attributes
+    draftImage
   };
 }
 
-export function setDraftImage(item) {
+export function setDraftImage(draftImage) {
   return {
     type: SET_DRAFT_IMAGE,
-    item
+    draftImage
   };
 }
 

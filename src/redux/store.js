@@ -13,10 +13,10 @@ const store = createStore(
     applyMiddleware(sagaMiddleware),
     reduxSearch({
       resourceIndexes: {
-        items: ['author'],
+        images: ['author'],
       },
       resourceSelector: (resourceName, state) => {
-        return state.image[resourceName];
+        return state.content[resourceName];
       },
     }),
   ),
